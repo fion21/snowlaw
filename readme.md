@@ -3,8 +3,9 @@ Law group template
 Theme: 
 1. #00006F
 2. #a59451fb
-
+New custome website based on:
 **Github**: https://github.com/PaulleDemon/awesome-landing-pages
+**Credit given and acknowledged. This site is for educational purposes only.
 
 ## Usage
 
