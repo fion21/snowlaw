@@ -29,5 +29,12 @@
     },
     "dependencies": {
         "postcss-simple-vars": "^7.0.1"
+    },
+    "tailwindConfig": {
+        "content": [
+            "./index.html",
+            "./src/**/*.{js,ts,jsx,tsx,html}",
+            "./components/**/*.{js,ts,jsx,tsx,html}"
+        ]
     }
 }
