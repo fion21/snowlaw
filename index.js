@@ -29,7 +29,7 @@ function toggleHeader() {
         collapseBtn.classList.add("bi-x", "max-lg:tw-fixed")
         isHeaderCollapsed = false
 
-        setTimeout(() => window.addEventListener("click", onHeaderClickOutside), 1)
+ setTimeout(() => window.addEventListener("click", onHeaderClickOutside), 1)
 
     } else {
         collapseHeaderItems.classList.remove("opacity-100")
@@ -39,6 +39,37 @@ function toggleHeader() {
         isHeaderCollapsed = true
         window.removeEventListener("click", onHeaderClickOutside)
 
+    }
+}
+
+function responsive() {
+    if (window.innerWidth > RESPONSIVE_WIDTH) {
+        collapseHeaderItems.style.width = ""
+
+    } else {
+        isHeaderCollapsed = true
+    }
+}
+
+window.addEventListener("resize", responsive)
+
+function setLanguage(lang) {
+    document.documentElement.lang = lang
+    if (window.localStorage) {
+        localStorage.setItem("lang", lang)
+    }
+}
+
+const langEnBtn = document.getElementById("lang-en")
+const langThBtn = document.getElementById("lang-th")
+
+if (langEnBtn && langThBtn) {
+    langEnBtn.addEventListener("click", () => setLanguage("en"))
+    langThBtn.addEventListener("click", () => setLanguage("th"))
+
+    const savedLang = localStorage.getItem("lang")
+    if (savedLang) {
+        setLanguage(savedLang)
     }
 }
 
