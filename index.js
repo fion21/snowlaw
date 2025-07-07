@@ -53,3 +53,23 @@ function responsive() {
 
 window.addEventListener("resize", responsive)
 
+function setLanguage(lang) {
+    document.documentElement.lang = lang
+    if (window.localStorage) {
+        localStorage.setItem("lang", lang)
+    }
+}
+
+const langEnBtn = document.getElementById("lang-en")
+const langThBtn = document.getElementById("lang-th")
+
+if (langEnBtn && langThBtn) {
+    langEnBtn.addEventListener("click", () => setLanguage("en"))
+    langThBtn.addEventListener("click", () => setLanguage("th"))
+
+    const savedLang = localStorage.getItem("lang")
+    if (savedLang) {
+        setLanguage(savedLang)
+    }
+}
+
