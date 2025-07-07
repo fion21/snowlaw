@@ -29,7 +29,7 @@ function toggleHeader() {
         collapseBtn.classList.add("bi-x", "max-lg:tw-fixed")
         isHeaderCollapsed = false
 
-        setTimeout(() => window.addEventListener("click", onHeaderClickOutside), 1)
+ setTimeout(() => window.addEventListener("click", onHeaderClickOutside), 1)
 
     } else {
         collapseHeaderItems.classList.remove("opacity-100")
@@ -72,4 +72,17 @@ if (langEnBtn && langThBtn) {
         setLanguage(savedLang)
     }
 }
+
+
+function responsive() {
+    if (window.innerWidth > RESPONSIVE_WIDTH) {
+        collapseHeaderItems.style.width = ""
+
+    } else {
+        isHeaderCollapsed = true
+    }
+}
+
+window.addEventListener("resize", responsive)
+
 
