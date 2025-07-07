@@ -73,6 +73,7 @@ if (langEnBtn && langThBtn) {
     }
 }
 
+
 function responsive() {
     if (window.innerWidth > RESPONSIVE_WIDTH) {
         collapseHeaderItems.style.width = ""
@@ -83,4 +84,5 @@ function responsive() {
 }
 
 window.addEventListener("resize", responsive)
+
 
